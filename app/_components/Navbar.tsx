@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 
-const navItems = ['Hero', 'Fun Facts', 'Wedding Timeline']
+const navItems = ['Home', 'Fun Facts', 'Wedding Timeline']
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,9 +13,8 @@ export default function Navbar() {
     const handleScroll = () => {
       const sections = document.querySelectorAll('.section')
       const scrollPosition = window.scrollY
-
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop
+        const sectionTop = section.getBoundingClientRect().top + window.scrollY
         const sectionHeight = section.clientHeight
 
         if (scrollPosition >= sectionTop - sectionHeight / 3) {
