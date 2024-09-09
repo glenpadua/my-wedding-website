@@ -3,7 +3,13 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion';
 
-const FunFact = ({ icon, question, answer }) => {
+interface FunFactProps {
+  icon: string;
+  question: string;
+  answer: string;
+}
+
+const FunFact: React.FC<FunFactProps> = ({ icon, question, answer }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
