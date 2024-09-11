@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <div className="relative h-full bg-white text-navy-blue flex flex-col justify-center items-center overflow-hidden">
+    <div className="relative h-full w-full flex flex-col justify-center items-center overflow-hidden">
       {/* Top-left flower */}
       <Image
         src="/images/flower-top-left.png"
@@ -44,7 +44,7 @@ export default function Hero() {
       />
       
       {/* Main content */}
-      <main className="relative z-10 flex flex-col items-center justify-center text-center px-4 text-dusty-blue-800 mt-32 sm:mt-24 md:mt-32 lg:mt-40">
+      <main className="relative z-10 flex flex-col items-center justify-center text-center px-4 text-dusty-blue-800">
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 tracking-widest text-dusty-blue-600">DECEMBER 29TH 2024</p>
         <div className="flex flex-col">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif tracking-widest leading-[0.7]">GLEN</h1>
@@ -54,8 +54,8 @@ export default function Hero() {
       </main>
       
       {/* Bottom indicator */}
-      <div className="mt-auto mb-4 z-10">
-        <div className="w-12 h-1 bg-navy-blue rounded-full"></div>
+      <div className="absolute bottom-4 z-10">
+        <div className="w-12 h-1 bg-dusty-blue-500 rounded-full"></div>
       </div>
     </div>
   )

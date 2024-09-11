@@ -73,6 +73,7 @@ const config: Config = {
           500: '#627d98',
           600: '#1c3c75',
           800: '#032555',
+          900: '#0d1639', // Add this new color
         },
       }
     },

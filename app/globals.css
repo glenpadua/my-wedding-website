@@ -178,3 +178,41 @@ body {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .travel-section {
+    overflow-y: auto;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .section-travel-container {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .section-travel {
+    height: auto;
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+
+  .section-travel-end {
+    scroll-snap-align: end;
+    height: 1px; /* Minimal height to create a snap point */
+  }
+
+  .travel-section {
+    height: auto;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    overflow-y: auto;
+  }
+}
