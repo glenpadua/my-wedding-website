@@ -216,3 +216,13 @@ body {
     overflow-y: auto;
   }
 }
+
+/* Add this to your existing globals.css file */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

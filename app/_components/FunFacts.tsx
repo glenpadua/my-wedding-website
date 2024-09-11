@@ -45,17 +45,17 @@ export default function FunFacts() {
 
   return (
     <div className="h-full bg-white text-dusty-blue-600 flex flex-col md:flex-row items-center justify-center p-4">
-      <div className="w-full md:w-1/2 max-w-md mb-8 md:mb-0">
+      <div className="w-full md:w-1/2 md:order-2 md:pl-8 flex items-center justify-center mb-8 md:mb-0">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center">
+          SOME FUN FACTS ABOUT US
+        </h2>
+      </div>
+      <div className="w-full md:w-1/2 md:order-1 max-w-md">
         <div className="grid grid-cols-2 gap-2">
           {facts.map((fact, index) => (
             <FunFact key={index} {...fact} />
           ))}
         </div>
-      </div>
-      <div className="w-full md:w-1/2 md:pl-8 flex items-center justify-center">
-        <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center">
-          SOME FUN FACTS ABOUT US
-        </h2>
       </div>
     </div>
   )
