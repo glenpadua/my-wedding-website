@@ -39,7 +39,15 @@ interface InfoColumnProps {
   animationVariant?: any;
 }
 
-const AnimatedImage = ({ src, alt, width, height, animationVariant }) => {
+interface AnimatedImageProps {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  animationVariant: any;
+}
+
+const AnimatedImage: React.FC<AnimatedImageProps> = ({ src, alt, width, height, animationVariant }) => {
   const controls = useAnimation()
   const [ref, inView] = useInView({
     triggerOnce: true,
