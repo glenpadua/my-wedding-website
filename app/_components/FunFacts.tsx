@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react'
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 
 interface FunFactProps {
@@ -37,6 +38,31 @@ const FunFact: React.FC<FunFactProps> = ({ icon, question, answer }) => {
 }
 
 export default function FunFacts() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
+  const dropAnimation = {
+    hidden: { y: -200, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1, 
+      transition: { 
+        duration: 0.8, 
+        ease: 'easeOut',
+        delay: 0.2 // Add a slight delay for a more natural feel
+      } 
+    },
+  };
+
   const facts = [
     { icon: '🏙', question: 'WHERE DID WE MEET?', answer: 'BENGALURU' },
     { icon: '✉️', question: 'HOW LONG HAVE WE KNOWN EACH OTHER', answer: '4 YEARS & COUNTING' },
@@ -45,26 +71,38 @@ export default function FunFacts() {
   ]
 
   return (
-    <div className="h-full bg-white text-dusty-blue-600 flex flex-col md:flex-row items-center justify-center p-4">
+    <div ref={ref} className="h-full bg-white text-dusty-blue-600 flex flex-col md:flex-row items-center justify-center p-4">
       <div className="w-full md:w-1/2 md:order-2 md:pl-8 flex items-center justify-center mb-8 md:mb-0">
         <div className="relative">
-          <Image
-            src="/images/mills.svg"
-            width={100}
-            height={100}
-            alt="Mills illustration"
-            className="absolute top-[-105px] right-[-18px] w-40"
-          />
+          <motion.div
+            initial="hidden"
+            animate={controls}
+            variants={dropAnimation}
+          >
+            <Image
+              src="/images/mills.svg"
+              width={100}
+              height={100}
+              alt="Mills illustration"
+              className="absolute top-[-105px] right-[-18px] w-40"
+            />
+          </motion.div>
           <h2 className="text-4xl md:text-8xl text-center font-light tracking-wider">
             SOME FUN<br/> FACTS ABOUT<br/> US
           </h2>
-          <Image
-            src="/images/glen.svg"
-            width={100}
-            height={100}
-            alt="Glen illustration"
-            className="absolute bottom-[-49px] right-[24px] w-24"
-          />
+          <motion.div
+            initial="hidden"
+            animate={controls}
+            variants={dropAnimation}
+          >
+            <Image
+              src="/images/glen.svg"
+              width={100}
+              height={100}
+              alt="Glen illustration"
+              className="absolute bottom-[-49px] right-[24px] w-24"
+            />
+          </motion.div>
         </div>
       </div>
       <div className="w-full md:w-1/2 md:order-1 max-w-md">

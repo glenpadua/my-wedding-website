@@ -1,46 +1,57 @@
 'use client'
 
 import React from 'react'
-import { Plane, Home, Car, Train, Bus, Building, Hotel, Bike, LucideIcon } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
+import Image from 'next/image'
 
 interface InfoItemProps {
   title: string;
   description: string;
-  Icon: LucideIcon;
+  link: string;
 }
 
-const InfoItem: React.FC<InfoItemProps> = ({ title, description, Icon }) => (
-  <motion.div 
-    className="mb-6 p-4 bg-white border-2 border-dusty-blue-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-    whileHover={{ scale: 1.05 }}
-    transition={{ type: "spring", stiffness: 300 }}
-  >
-    <div className="flex items-start">
-      <div className="mr-3 text-dusty-blue-600"><Icon size={24} /></div>
-      <div>
-        <h3 className="text-xl font-serif text-dusty-blue-800 mb-1">{title}</h3>
-        <p className="text-dusty-blue-700">{description}</p>
-      </div>
-    </div>
-  </motion.div>
+const InfoItem: React.FC<InfoItemProps> = ({ title, description, link }) => (
+  <Link href={link} target="_blank" rel="noopener noreferrer">
+    <motion.div 
+      className="mb-6 p-6 bg-white border-2 border-dusty-blue-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer group relative"
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 300 }}
+    >
+      <h3 className="text-2xl font-serif text-dusty-blue-800 mb-2 pr-8 uppercase">{title}</h3>
+      <p className="text-dusty-blue-700">{description}</p>
+      <ExternalLink 
+        size={20} 
+        className="absolute top-4 right-4 text-dusty-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      />
+    </motion.div>
+  </Link>
 )
 
 interface InfoColumnProps {
   title: string;
-  Icon: LucideIcon;
+  iconSrc: string;
   items: InfoItemProps[];
+  iconWidth?: number;
+  iconHeight?: number;
 }
 
-const InfoColumn: React.FC<InfoColumnProps> = ({ title, Icon, items }) => (
+const InfoColumn: React.FC<InfoColumnProps> = ({ title, iconSrc, items, iconWidth = 64, iconHeight = 64 }) => (
   <div className="mb-8 md:mb-0">
-    <div className="flex items-center justify-center mb-4">
-      <Icon size={48} className="text-dusty-blue-600" />
+    <div className="flex flex-col items-center justify-center mb-4">
+      <div className="h-24 flex items-center justify-center"> {/* Fixed height container for icon */}
+        <Image src={iconSrc} alt={`${title} icon`} width={iconWidth} height={iconHeight} className="text-dusty-blue-600" />
+      </div>
+      <div className="h-16 flex items-center justify-center"> {/* Fixed height container for title */}
+        <h2 className="text-4xl font-serif text-dusty-blue-800 text-center">{title}</h2>
+      </div>
     </div>
-    <h2 className="text-4xl font-serif text-dusty-blue-800 text-center mb-6">{title}</h2>
-    {items.map((item, index) => (
-      <InfoItem key={index} {...item} />
-    ))}
+    <div className="mt-6"> {/* Separate container for items */}
+      {items.map((item, index) => (
+        <InfoItem key={index} {...item} />
+      ))}
+    </div>
   </div>
 )
 
@@ -53,42 +64,44 @@ interface TravelInfo {
 export default function TravelAndStay() {
   const travelInfo: TravelInfo = {
     travel: [
-      { title: "Nearest Airport", description: "Airport Name, Distance: X km, Taxi Available", Icon: Plane },
-      { title: "Nearest Station", description: "Station Name, Distance: X km, Bus Available", Icon: Train },
-      { title: "Nearest Bus Station", description: "Bus Station Name, Distance: X km, Local Transport", Icon: Bus },
+      { title: "Nearest Airport", description: "Airport Name, Distance: X km, Taxi Available", link: "https://example.com/airport" },
+      { title: "Nearest Train Station", description: "Station Name, Distance: X km, Bus Available", link: "https://example.com/station" },
+      { title: "Nearest Bus Station", description: "Bus Station Name, Distance: X km, Local Transport", link: "https://example.com/bus-station" },
     ],
     stay: [
-      { title: "Hotels", description: "Luxury Hotel, Boutique Hotel, Budget Hotel", Icon: Building },
-      { title: "Resorts", description: "Beach Resort, Spa Resort, Golf Resort", Icon: Hotel },
-      { title: "Vacation Rentals", description: "Beachfront Villa, City Apartment, Country Cottage", Icon: Home },
+      { title: "Hotels", description: "Luxury Hotel, Boutique Hotel, Budget Hotel", link: "https://example.com/hotels" },
+      { title: "Resorts", description: "Beach Resort, Spa Resort, Golf Resort", link: "https://example.com/resorts" },
+      { title: "Airbnbs", description: "Beachfront Villa, City Apartment, Country Cottage", link: "https://example.com/rentals" },
     ],
     rentals: [
-      { title: "Car Rentals", description: "Luxury Cars, Economy Cars, SUVs", Icon: Car },
-      { title: "Bike Rentals", description: "Mountain Bikes, City Bikes, E-Bikes", Icon: Bike },
+      { title: "Car Rentals", description: "Luxury Cars, Economy Cars, SUVs", link: "https://example.com/car-rentals" },
+      { title: "Bike Rentals", description: "Mountain Bikes, City Bikes, E-Bikes", link: "https://example.com/bike-rentals" },
     ],
   }
 
   return (
-    <div className="h-full bg-gradient-to-b from-white to-dusty-blue-100 py-12 px-4">
+    <div className="h-full bg-gradient-to-b from-white to-dusty-blue-100 py-12 px-4 text-dusty-blue-800">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif tracking-widest text-dusty-blue-800 text-center mb-12">
+        <h1 className="text-4xl md:text-8xl text-center font-light tracking-wider">
           TRAVEL AND STAY
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 tracking-wider">
           <InfoColumn 
             title="Travel" 
-            Icon={Plane}
+            iconSrc="/images/travel.svg"
             items={travelInfo.travel} 
+            iconWidth={90}
           />
           <InfoColumn 
             title="Stay" 
-            Icon={Home}
+            iconSrc="/images/stay.svg"
             items={travelInfo.stay} 
           />
           <InfoColumn 
             title="Rentals" 
-            Icon={Car}
+            iconSrc="/images/rental.svg"
             items={travelInfo.rentals} 
+            iconWidth={100}
           />
         </div>
       </div>
