@@ -12,7 +12,7 @@ interface InfoItemProps {
 
 const InfoItem: React.FC<InfoItemProps> = ({ title, description, Icon }) => (
   <motion.div 
-    className="mb-6 p-4 bg-white/10 backdrop-blur-sm rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+    className="mb-6 p-4 bg-white border-2 border-dusty-blue-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
     whileHover={{ scale: 1.05 }}
     transition={{ type: "spring", stiffness: 300 }}
   >

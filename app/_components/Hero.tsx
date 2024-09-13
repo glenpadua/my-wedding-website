@@ -100,10 +100,10 @@ export default function Hero() {
       <main className="relative z-10 flex flex-col items-center justify-center text-center px-4 text-dusty-blue-800">
         <p className="text-base sm:text-lg md:text-2xl lg:text-3xl mb-6 md:mb-8 tracking-widest text-dusty-blue-600 font-thin">DECEMBER 29TH 2024</p>
         <div className="flex flex-col">
-          <h1 className="text-5xl md:text-9xl font-serif tracking-widest md:leading-[0.7]">GLEN</h1>
-          <span className="text-5xl md:text-9xl font-serif tracking-widest md:leading-[0.7]">&</span>
+          <h1 className="text-5xl md:text-9xl tracking-widest md:leading-[0.7]">GLEN</h1>
+          <span className="text-5xl md:text-9xl tracking-widest md:leading-[0.7]">&</span>
           <div className="relative inline-block">
-            <h1 className="text-5xl md:text-9xl font-serif tracking-widest md:leading-[0.7]">MILLUSHA</h1>
+            <h1 className="text-5xl md:text-9xl tracking-widest md:leading-[0.7]">MILLUSHA</h1>
             <motion.div
               initial="initial"
               animate="animate"
