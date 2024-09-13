@@ -3,9 +3,28 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 import Footer from '../_components/Footer'
 
 export default function Note() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+
+  const popAnimation = {
+    scale: inView ? [0, 5, 1] : 0,
+    opacity: inView ? [0, 1, 1] : 0,
+    transition: { 
+      duration: 0.8, 
+      times: [0, 0.4, 1],
+      ease: "easeOut",
+      type: "spring",
+      stiffness: 100,
+      damping: 15
+    }
+  }
+
   return (
     <div className="h-full bg-white text-dusty-blue-800 flex flex-col items-center justify-center p-4 relative">
       <div className="w-full max-w-3xl flex flex-col items-center">
@@ -13,18 +32,24 @@ export default function Note() {
           A NOTE
         </h2>
         <motion.div 
+          ref={ref}
           className="text-center relative inline-block"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Image
-            src="/images/envelope.svg"
-            alt="Envelope"
-            width={60}
-            height={60}
-            className="absolute left-2 top-16 -translate-x-full -translate-y-1/2 -rotate-[30deg]"
-          />
+          <motion.div
+            animate={popAnimation}
+            initial={{ scale: 0, opacity: 0 }}
+          >
+            <Image
+              src="/images/envelope.svg"
+              alt="Envelope"
+              width={60}
+              height={60}
+              className="absolute left-2 top-16 -translate-x-full -translate-y-1/2 -rotate-[30deg]"
+            />
+          </motion.div>
           
           <h3 className="text-4xl font-serif mb-8">YOUR PRESENCE IS A GIFT</h3>
           
@@ -46,13 +71,18 @@ export default function Note() {
             floor is mandatory :)
           </p>
           
-          <Image
-            src="/images/rings.svg"
-            alt="Wedding Rings"
-            width={60}
-            height={60}
-            className="absolute -right-4 bottom-16 translate-x-full translate-y-1/2 rotate-[30deg]"
-          />
+          <motion.div
+            animate={popAnimation}
+            initial={{ scale: 0, opacity: 0 }}
+          >
+            <Image
+              src="/images/rings.svg"
+              alt="Wedding Rings"
+              width={60}
+              height={60}
+              className="absolute -right-4 bottom-16 translate-x-full translate-y-1/2 rotate-[30deg]"
+            />
+          </motion.div>
         </motion.div>
       </div>
       <Footer />

@@ -2,7 +2,8 @@
 
 import React from 'react'
 import { ExternalLink } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -35,13 +36,45 @@ interface InfoColumnProps {
   items: InfoItemProps[];
   iconWidth?: number;
   iconHeight?: number;
+  animationVariant?: any;
 }
 
-const InfoColumn: React.FC<InfoColumnProps> = ({ title, iconSrc, items, iconWidth = 64, iconHeight = 64 }) => (
+const AnimatedImage = ({ src, alt, width, height, animationVariant }) => {
+  const controls = useAnimation()
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
+
+  return (
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={animationVariant}
+    >
+      <Image src={src} alt={alt} width={width} height={height} className="text-dusty-blue-600" />
+    </motion.div>
+  )
+}
+
+const InfoColumn: React.FC<InfoColumnProps> = ({ title, iconSrc, items, iconWidth = 64, iconHeight = 64, animationVariant }) => (
   <div className="mb-8 md:mb-0">
     <div className="flex flex-col items-center justify-center mb-4">
       <div className="h-24 flex items-center justify-center"> {/* Fixed height container for icon */}
-        <Image src={iconSrc} alt={`${title} icon`} width={iconWidth} height={iconHeight} className="text-dusty-blue-600" />
+        <AnimatedImage
+          src={iconSrc}
+          alt={`${title} icon`}
+          width={iconWidth}
+          height={iconHeight}
+          animationVariant={animationVariant}
+        />
       </div>
       <div className="h-16 flex items-center justify-center"> {/* Fixed height container for title */}
         <h2 className="text-4xl font-serif text-dusty-blue-800 text-center">{title}</h2>
@@ -79,6 +112,39 @@ export default function TravelAndStay() {
     ],
   }
 
+  const travelAnimation = {
+    hidden: { x: '-100%' },
+    visible: {
+      x: '0%',
+      transition: {
+        x: { type: 'spring', stiffness: 100, damping: 20, duration: 1.5 },
+        delay: 1,
+      },
+    },
+  }
+
+  const stayAnimation = {
+    hidden: { y: '-100%' },
+    visible: {
+      y: 0,
+      transition: {
+        y: { type: 'spring', stiffness: 50, damping: 15, duration: 1.8 },
+        delay: 1,
+      },
+    },
+  }
+
+  const rentalAnimation = {
+    hidden: { x: '100%' },
+    visible: {
+      x: '0%',
+      transition: {
+        x: { type: 'spring', stiffness: 100, damping: 20, duration: 1.5 },
+        delay: 1,
+      },
+    },
+  }
+
   return (
     <div className="h-full bg-gradient-to-b from-white to-dusty-blue-100 py-12 px-4 text-dusty-blue-800">
       <div className="max-w-7xl mx-auto">
@@ -91,17 +157,20 @@ export default function TravelAndStay() {
             iconSrc="/images/travel.svg"
             items={travelInfo.travel} 
             iconWidth={90}
+            animationVariant={travelAnimation}
           />
           <InfoColumn 
             title="Stay" 
             iconSrc="/images/stay.svg"
             items={travelInfo.stay} 
+            animationVariant={stayAnimation}
           />
           <InfoColumn 
             title="Rentals" 
             iconSrc="/images/rental.svg"
             items={travelInfo.rentals} 
             iconWidth={100}
+            animationVariant={rentalAnimation}
           />
         </div>
       </div>

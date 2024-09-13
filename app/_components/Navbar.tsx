@@ -53,7 +53,7 @@ export default function Navbar() {
         <div className="flex justify-center h-16">
           <div 
             ref={scrollContainerRef}
-            className="flex space-x-4 sm:space-x-8 overflow-x-auto scrollbar-hide"
+            className="flex space-x-4 sm:space-x-8 overflow-x-auto scrollbar-hide tracking-wider"
           >
             {navItems.map((item) => {
               const sectionId = item.toLowerCase().replace(' & ', '-').replace(' ', '-')
