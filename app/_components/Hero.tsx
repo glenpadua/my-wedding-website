@@ -69,7 +69,7 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
         variants={flowerVariants}
-        className="absolute bottom-[-50px] left-[-50px] w-1/2 md:w-64"
+        className="absolute bottom-[50px] md:bottom-[-50px] left-[-50px] w-1/2 md:w-64"
       >
         <Image
           src="/images/flower-bottom-left.svg"
@@ -85,7 +85,7 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
         variants={flowerVariants}
-        className="absolute bottom-[-110px] right-[-130px] w-3/4 md:w-96"
+        className="absolute bottom-[40px] md:bottom-[-110px] right-[-130px] w-3/4 md:w-96"
       >
         <Image
           src="/images/flower-bottom-right.svg"
@@ -98,7 +98,7 @@ export default function Hero() {
       
       {/* Main content */}
       <main className="relative z-10 flex flex-col items-center justify-center text-center px-4 text-dusty-blue-800">
-        <p className="text-base sm:text-lg md:text-2xl lg:text-3xl mb-6 md:mb-8 tracking-widest text-dusty-blue-600 font-thin">DECEMBER 29TH 2024</p>
+        <p className="text-base md:text-2xl lg:text-3xl mb-6 md:mb-8 tracking-widest text-dusty-blue-600 font-thin">DECEMBER 29TH 2024</p>
         <div className="flex flex-col">
           <h1 className="text-5xl md:text-9xl tracking-widest md:leading-[0.7]">GLEN</h1>
           <span className="text-5xl md:text-9xl tracking-widest md:leading-[0.7]">&</span>
@@ -109,7 +109,7 @@ export default function Hero() {
               animate="animate"
               variants={floatingFlowerVariants}
               style={{ originY: 0.5 }}
-              className="absolute top-[-5px] left-[61%] w-[30px] h-[30px] md:top-[-5px] md:left-[61%] md:w-[30px] md:h-[30px]"
+              className="absolute top-[2px] left-[60%] w-[30px] h-[30px] md:top-[-5px] md:left-[61%] md:w-[30px] md:h-[30px]"
             >
               <motion.div
                 animate={{
@@ -126,7 +126,7 @@ export default function Hero() {
                   alt="Decorative flower"
                   width={30}
                   height={30}
-                  className="w-full h-full"
+                  className="w-4 md:w-full md:h-full"
                 />
               </motion.div>
             </motion.div>

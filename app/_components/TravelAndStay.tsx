@@ -154,27 +154,27 @@ export default function TravelAndStay() {
   }
 
   return (
-    <div className="h-full bg-gradient-to-b from-white to-dusty-blue-100 py-12 px-4 text-dusty-blue-800">
+    <div className="h-full bg-gradient-to-b from-white to-dusty-blue-100 items-center justify-center text-dusty-blue-800">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-8xl text-center font-light tracking-wider">
+        <h1 className="text-5xl md:text-8xl text-center font-light tracking-wider">
           TRAVEL AND STAY
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 tracking-wider">
           <InfoColumn 
-            title="Travel" 
+            title="TRAVEL" 
             iconSrc="/images/travel.svg"
             items={travelInfo.travel} 
             iconWidth={90}
             animationVariant={travelAnimation}
           />
           <InfoColumn 
-            title="Stay" 
+            title="STAY" 
             iconSrc="/images/stay.svg"
             items={travelInfo.stay} 
             animationVariant={stayAnimation}
           />
           <InfoColumn 
-            title="Rentals" 
+            title="RENTALS" 
             iconSrc="/images/rental.svg"
             items={travelInfo.rentals} 
             iconWidth={100}

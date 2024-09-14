@@ -28,7 +28,7 @@ export default function RSVPSection() {
   }
 
   return (
-    <div ref={ref} className="h-full bg-dusty-blue-900 text-white flex flex-col items-center justify-center p-4 relative">
+    <div ref={ref} className="h-[94%] md:h-full bg-dusty-blue-900 text-white flex flex-col items-center justify-center p-4 relative">
       <div className="text-center">
         <p className="text-lg mb-4">— G&M —</p>
         <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif tracking-widest mb-8">
@@ -65,7 +65,7 @@ export default function RSVPSection() {
             alt="Decorative flowers"
             width={1920}
             height={200}
-            className="w-[104%] absolute bottom-[-60px] left-[-30px]"
+            className="w-[104%] absolute bottom-5 -left-2 md:bottom-[-60px] md:left-[-30px]"
           />
         </motion.div>
       </div>
