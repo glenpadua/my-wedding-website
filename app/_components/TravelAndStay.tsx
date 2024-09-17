@@ -154,7 +154,7 @@ export default function TravelAndStay() {
   }
 
   return (
-    <div className="h-full bg-gradient-to-b from-white to-dusty-blue-100 items-center justify-center text-dusty-blue-800">
+    <div className="h-full bg-gradient-to-b from-white to-dusty-blue-100 items-center justify-center text-dusty-blue-800 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-5xl md:text-8xl text-center font-light tracking-wider">
           TRAVEL AND STAY

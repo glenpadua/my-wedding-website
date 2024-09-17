@@ -66,7 +66,7 @@ const config: Config = {
         },
         'dusty-blue': {
           50: '#f0f4f8',
-          100: '#d9e2ec',
+          100: '#d7e6ed',
           200: '#bcccdc',
           300: '#9fb3c8',
           400: '#829ab1',
