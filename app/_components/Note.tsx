@@ -51,25 +51,27 @@ export default function Note() {
             />
           </motion.div>
           
-          <h3 className="text-3xl md:text-4xl font-serif mb-6 md:mb-8">YOUR PRESENCE IS A GIFT</h3>
-          
-          <div className="flex items-center justify-center mb-4 md:mb-6">
-            <p className="text-md md:text-2xl">
-              Your best wishes and presence on our wedding day are<br />
-              the greatest present for us.
+          <h3 className="text-3xl md:text-4xl font-serif mb-6 md:mb-8 tracking-wider">YOUR PRESENCE IS A GIFT</h3>
+
+          <div className='font-light tracking-wider'>
+            <div className="flex items-center justify-center mb-4 md:mb-6">
+              <p className="text-md md:text-2xl">
+                Your best wishes and presence on our wedding day are<br />
+                the greatest present for us.
+              </p>
+            </div>
+            
+            <p className="text-md md:text-2xl mb-6 md:mb-8">
+              We kindly request no physical gifts, your support and<br />
+              blessings will help us start our journey together.
+            </p>
+            
+            <p className="text-md md:text-2xl mb-4 md:mb-6">
+              The Church wedding ceremony is optional for our non-<br />
+              catholic friends & family, but your presence on the dance<br />
+              floor is mandatory :)
             </p>
           </div>
-          
-          <p className="text-md md:text-2xl mb-6 md:mb-8">
-            We kindly request no physical gifts, your support and<br />
-            blessings will help us start our journey together.
-          </p>
-          
-          <p className="text-md md:text-2xl mb-4 md:mb-6">
-            The Church wedding ceremony is optional for our non-<br />
-            catholic friends & family, but your presence on the dance<br />
-            floor is mandatory :)
-          </p>
           
           <motion.div
             animate={popAnimation}

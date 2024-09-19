@@ -112,6 +112,19 @@ export default function FunFacts() {
     },
   };
 
+  const cardAnimation = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: (i: number) => ({
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 0.5 + i * 0.1,
+        duration: 0.6,
+        ease: [0.48, 0.15, 0.25, 0.96],
+      },
+    }),
+  };
+
   const facts: FunFactProps[] = [
     {
       icon: '🏙',
@@ -181,7 +194,15 @@ export default function FunFacts() {
       <div className="w-full md:w-1/2 md:order-1 max-w-md">
         <div className="grid grid-cols-2 gap-4">
           {facts.map((fact, index) => (
-            <FunFact key={index} {...fact} />
+            <motion.div
+              key={index}
+              custom={index}
+              initial="hidden"
+              animate={controls}
+              variants={cardAnimation}
+            >
+              <FunFact {...fact} />
+            </motion.div>
           ))}
         </div>
         <p className="text-center text-lg mt-4 text-dusty-blue-600 italic">Click an option to reveal the answer!</p>

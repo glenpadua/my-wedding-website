@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FloatingRSVPButton from './_components/FloatingRSVPButton'
 
 export const metadata: Metadata = {
   title: "Glen & Millusha's Wedding",
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans">
         {children}
+        <FloatingRSVPButton />
       </body>
     </html>
   )

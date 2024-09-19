@@ -31,13 +31,13 @@ const floatingFlowerVariants = {
 
 export default function Hero() {
   return (
-    <div className="relative h-full w-full flex flex-col justify-center items-center overflow-hidden bg-gradient-to-b from-white to-dusty-blue-100">
+    <div className="relative h-full w-full flex flex-col justify-center items-center overflow-hidden bg-gradient-to-b from-white to-dusty-blue-100 z-0">
       {/* Top-left flower */}
       <motion.div
         initial="hidden"
         animate="visible"
         variants={flowerVariants}
-        className="absolute top-0 left-[-5px] w-1/3 md:w-40"
+        className="absolute top-[-20px] left-[-5px] w-1/3 md:w-40 z-20"
       >
         <Image
           src="/images/flower-top-left.svg"
@@ -122,7 +122,7 @@ export default function Hero() {
                 }}
               >
                 <Image
-                  src="/images/s-flower.svg"
+                  src="/images/text-flower.svg"
                   alt="Decorative flower"
                   width={30}
                   height={30}
