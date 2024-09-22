@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 
-const navItems = ['Home', 'Fun Facts', 'Location', 'Timeline', 'RSVP', 'Travel & Stay', 'Note']
+const navItems = ['Home', 'Location', 'Timeline', 'RSVP', 'Travel & Stay', 'Note']
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home')
