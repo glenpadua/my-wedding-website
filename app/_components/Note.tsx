@@ -56,20 +56,12 @@ export default function Note() {
           <div className='font-light tracking-wider'>
             <div className="flex items-center justify-center mb-4 md:mb-6">
               <p className="text-md md:text-2xl">
-                Your best wishes and presence on our wedding day are<br />
-                the greatest present for us.
+              We would be grateful if you could arrive for the reception on time as we have some time restrictions and would like to begin early.
               </p>
             </div>
             
             <p className="text-md md:text-2xl mb-6 md:mb-8">
-              We kindly request no physical gifts, your support and<br />
-              blessings will help us start our journey together.
-            </p>
-            
-            <p className="text-md md:text-2xl mb-4 md:mb-6">
-              The Church wedding ceremony is optional for our non-<br />
-              catholic friends & family, but your presence on the dance<br />
-              floor is mandatory :)
+              We kindly request no physical gifts. Your best wishes and presence on our wedding day are the greatest gift for us.
             </p>
           </div>
           

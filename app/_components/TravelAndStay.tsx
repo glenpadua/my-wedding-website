@@ -16,23 +16,15 @@ interface InfoItemProps {
 const InfoItem: React.FC<InfoItemProps> = ({ title, description, link }) => (
   <Link href={link} target="_blank" rel="noopener noreferrer">
     <motion.div 
-      className={`mb-6 p-6 ${
-        title === "Guest Travel Plans" 
-          ? "bg-gradient-to-br from-dusty-blue-50 to-dusty-blue-100 border-dusty-blue-200" 
-          : "bg-white border-dusty-blue-200"
-      } border-2 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer group relative`}
+      className="mb-6 p-6 bg-white border-dusty-blue-200 border-2 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer group relative"
       whileHover={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
-      <h3 className={`text-2xl font-serif mb-2 pr-8 uppercase ${
-        title === "Guest Travel Plans" ? "text-dusty-blue-800" : "text-dusty-blue-700"
-      }`}>{title}</h3>
-      <p className={title === "Guest Travel Plans" ? "text-dusty-blue-600" : "text-dusty-blue-500"}>{description}</p>
+      <h3 className="text-2xl font-serif mb-2 pr-8 uppercase text-dusty-blue-700">{title}</h3>
+      <p className="text-dusty-blue-500">{description}</p>
       <ExternalLink 
         size={20} 
-        className={`absolute top-4 right-4 ${
-          title === "Guest Travel Plans" ? "text-dusty-blue-500" : "text-dusty-blue-400"
-        } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+        className="absolute top-4 right-4 text-dusty-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
       />
     </motion.div>
   </Link>
@@ -107,7 +99,7 @@ const InfoColumn: React.FC<InfoColumnProps> = ({ title, iconSrc, items, iconWidt
 interface TravelInfo {
   travel: InfoItemProps[];
   stay: InfoItemProps[];
-  rentals: InfoItemProps[];
+  info: InfoItemProps[];
 }
 
 export default function TravelAndStay() {
@@ -122,9 +114,10 @@ export default function TravelAndStay() {
       { title: "Resorts", description: "Resorts near Benaulim and Varca", link: "https://tinyurl.com/g-m-wedding-resort-options" },
       { title: "Airbnbs", description: "Villas and apartments near Margao", link: "https://tinyurl.com/g-m-wedding-airbnb-options" },
     ],
-    rentals: [
+    info: [
       { title: "Vehicle Rentals", description: "Car and bike rentals for your convenience", link: "https://tinyurl.com/g-m-wedding-rental-options" },
       { title: "Guest Travel Plans", description: "See how others are traveling and share your plans", link: "https://tinyurl.com/wedding-travel-plans" },
+      { title: "Interactive Map", description: "View all related locations and more", link: "https://www.google.com/maps/d/u/0/edit?mid=13b2YTiVxGe--xo00ET0z2MnO7Sw6kGk&usp=sharing" },
     ],
   }
 
@@ -186,9 +179,9 @@ export default function TravelAndStay() {
             animationVariant={stayAnimation}
           />
           <InfoColumn 
-            title="RENTALS" 
+            title="INFO & PLANS" 
             iconSrc="/images/rental.svg"
-            items={travelInfo.rentals} 
+            items={travelInfo.info} 
             iconWidth={120}
             animationVariant={rentalAnimation}
           />
