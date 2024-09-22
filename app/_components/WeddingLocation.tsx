@@ -101,7 +101,7 @@ export default function WeddingLocation() {
               animate="animate"
               variants={floatingFlowerVariants}
               style={{ originY: 0.5 }}
-              className="absolute top-[20px] left-0 w-[30px] h-[30px]"
+              className="absolute left-0 top-[4px] md:top-[20px] md:left-0 w-[30px] h-[30px]"
             >
               <motion.div
                 animate={{
@@ -118,7 +118,7 @@ export default function WeddingLocation() {
                   alt="Decorative flower"
                   width={30}
                   height={30}
-                  className="w-full h-full"
+                  className="w-4 md:w-full md:h-full"
                 />
               </motion.div>
             </motion.div>

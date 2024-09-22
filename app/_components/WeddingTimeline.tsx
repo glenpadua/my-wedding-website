@@ -12,7 +12,7 @@ export default function WeddingTimeline() {
   })
 
   return (
-    <div className="h-full bg-white text-dusty-blue-800 flex flex-col md:flex-row items-center justify-start md:justify-center p-4 bg-gradient-to-b from-white to-dusty-blue-100">
+    <div className="h-full min-h-screen bg-white text-dusty-blue-800 flex flex-col md:flex-row items-center justify-start md:justify-center p-4 bg-gradient-to-b from-white to-dusty-blue-100">
       <div className="w-full md:w-1/2 mb-8 md:mb-0">
         <h2 className="text-5xl md:text-9xl text-center font-light tracking-wider">
           THE<br/> TIMELINE

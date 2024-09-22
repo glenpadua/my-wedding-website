@@ -53,7 +53,7 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
         variants={flowerVariants}
-        className="absolute top-0 right-[-20px] w-1/3 md:w-40"
+        className="absolute top-[-10px] right-[-20px] w-1/3 md:w-40"
       >
         <Image
           src="/images/flower-top-right.svg"

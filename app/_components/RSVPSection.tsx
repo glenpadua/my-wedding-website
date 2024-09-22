@@ -35,10 +35,14 @@ export default function RSVPSection() {
           WE HOPE YOU CAN<br />JOIN US
         </h2>
         <div className="mb-8 inline-flex justify-center relative">
-          <button className="bg-transparent border border-white text-white px-8 py-3 text-lg md:text-2xl font-semibold rounded-full hover:bg-white hover:text-dusty-blue-900 transition-colors duration-300 tracking-widest relative">
+          <a
+            href="https://forms.gle/UyeuVzgReVjMGray6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-transparent border border-white text-white px-8 py-3 text-lg md:text-2xl font-semibold rounded-full hover:bg-white hover:text-dusty-blue-900 transition-colors duration-300 tracking-widest relative"
+          >
             RSVP by November 1st
-            <span className="absolute inset-0 z-10" aria-hidden="true"></span>
-          </button>
+          </a>
           <motion.div
             variants={buttonFlowerVariants}
             initial="hidden"
