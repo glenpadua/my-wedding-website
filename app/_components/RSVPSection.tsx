@@ -58,7 +58,7 @@ export default function RSVPSection() {
           </motion.div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 w-[104%]">
+      <div className="absolute bottom-0 left-0 w-[104%] z-0 pointer-events-none">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
