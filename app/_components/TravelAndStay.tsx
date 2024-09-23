@@ -16,15 +16,15 @@ interface InfoItemProps {
 const InfoItem: React.FC<InfoItemProps> = ({ title, description, link }) => (
   <Link href={link} target="_blank" rel="noopener noreferrer">
     <motion.div 
-      className="mb-6 p-6 bg-white border-dusty-blue-200 border-2 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer group relative"
-      whileHover={{ scale: 1.05 }}
+      className="mb-4 p-4 bg-white border-dusty-blue-200 border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer group relative"
+      whileHover={{ scale: 1.03 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
-      <h3 className="text-2xl font-serif mb-2 pr-8 uppercase text-dusty-blue-700">{title}</h3>
-      <p className="text-dusty-blue-500">{description}</p>
+      <h3 className="text-lg font-serif mb-1 pr-6 uppercase text-dusty-blue-700">{title}</h3>
+      <p className="text-sm text-dusty-blue-500">{description}</p>
       <ExternalLink 
-        size={20} 
-        className="absolute top-4 right-4 text-dusty-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        size={16} 
+        className="absolute top-3 right-3 text-dusty-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
       />
     </motion.div>
   </Link>

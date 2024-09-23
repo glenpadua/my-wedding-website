@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-white mt-6 text-center text-sm md:text-xl text-gray-600">
+    <footer className="bg-white mt-12 text-center text-lg md:text-xl text-gray-600">
       <p>
         Designed by the tired and caffeinated{' '}
         <Link href="https://www.instagram.com/millushaa/" className="text-pink-500 hover:underline" target="_blank" rel="noopener noreferrer">

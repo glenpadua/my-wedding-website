@@ -47,22 +47,23 @@ export default function Note() {
               alt="Envelope"
               width={60}
               height={60}
-              className="absolute -top-10 left-10 md:left-2 md:top-16 -translate-x-full -translate-y-1/2 -rotate-[30deg]"
+              className="absolute -top-10 left-14 md:left-2 md:top-16 -translate-x-full -translate-y-1/2 -rotate-[30deg]"
             />
           </motion.div>
           
-          <h3 className="text-3xl md:text-4xl font-serif mb-6 md:mb-8 tracking-wider">YOUR PRESENCE IS A GIFT</h3>
+          {/* <h3 className="text-3xl md:text-4xl font-serif mb-6 md:mb-8 tracking-wider">YOUR PRESENCE IS A GIFT</h3> */}
 
-          <div className='font-light tracking-wider'>
+          <div className='font-light tracking-wider text-lg md:text-3xl'>
             <div className="flex items-center justify-center mb-4 md:mb-6">
-              <p className="text-md md:text-2xl">
-              We would be grateful if you could arrive for the reception on time as we have some time restrictions and would like to begin early.
+              <p className="">
+              We kindly request no physical gifts. Your best wishes and presence on our wedding day are the greatest gift for us.
               </p>
             </div>
-            
-            <p className="text-md md:text-2xl mb-6 md:mb-8">
-              We kindly request no physical gifts. Your best wishes and presence on our wedding day are the greatest gift for us.
-            </p>
+          
+
+            <p className="mb-6 md:mb-8">
+              {"As it's holiday season and Goa could be a bit of a rush, we recommend booking your travel and stay as soon as possible :)"}
+              </p>
           </div>
           
           <motion.div
@@ -74,7 +75,7 @@ export default function Note() {
               alt="Wedding Rings"
               width={60}
               height={60}
-              className="absolute bottom-2 right-5 md:-right-4 md:bottom-16 translate-x-full translate-y-1/2 rotate-[30deg]"
+              className="absolute bottom-0 right-10 md:-right-4 md:bottom-16 translate-x-full translate-y-1/2 rotate-[30deg]"
             />
           </motion.div>
         </motion.div>
