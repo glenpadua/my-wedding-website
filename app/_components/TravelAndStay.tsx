@@ -116,8 +116,8 @@ export default function TravelAndStay() {
     ],
     info: [
       { title: "Vehicle Rentals", description: "Car and bike rentals for your convenience", link: "https://tinyurl.com/g-m-wedding-rental-options" },
-      { title: "Guest Travel Plans", description: "See how others are traveling and share your plans", link: "https://tinyurl.com/wedding-travel-plans" },
-      { title: "Interactive Map", description: "View all related locations and more", link: "https://www.google.com/maps/d/u/0/edit?mid=13b2YTiVxGe--xo00ET0z2MnO7Sw6kGk&usp=sharing" },
+      { title: "Guest Travel Plans", description: "See how others are coming", link: "https://tinyurl.com/wedding-travel-plans" },
+      { title: "Wedding Weekend Map", description: "Explore key locations and local recommendations", link: "https://www.google.com/maps/d/u/0/edit?mid=13b2YTiVxGe--xo00ET0z2MnO7Sw6kGk&usp=sharing" },
     ],
   }
 
@@ -179,7 +179,7 @@ export default function TravelAndStay() {
             animationVariant={stayAnimation}
           />
           <InfoColumn 
-            title="INFO & PLANS" 
+            title="AND MORE..." 
             iconSrc="/images/rental.svg"
             items={travelInfo.info} 
             iconWidth={120}
