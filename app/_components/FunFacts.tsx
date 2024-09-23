@@ -138,7 +138,7 @@ export default function FunFacts() {
       question: 'HOW LONG HAVE WE KNOWN EACH OTHER?',
       options: ['6 MONTHS', '6 YEARS'],
       correctAnswer: '6 YEARS',
-      detailedAnswer: 'Friends for the first 2 years and a little more for the last 4 year.'
+      detailedAnswer: 'Friends for the first 2 years and a little more for the last 4 :)'
     },
     {
       icon: '🍔',
