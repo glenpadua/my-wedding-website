@@ -11,4 +11,4 @@ npm install
 npm run dev
 ```
 
-Live version: [my-wedding-website-wine.vercel.app](https://my-wedding-website-wine.vercel.app/)
+Live version: [fenimeetsfiltercoffee.vercel.app](https://fenimeetsfiltercoffee.vercel.app/)
