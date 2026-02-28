@@ -54,16 +54,23 @@ export default function Note() {
           {/* <h3 className="text-3xl md:text-4xl font-serif mb-6 md:mb-8 tracking-wider">YOUR PRESENCE IS A GIFT</h3> */}
 
           <div className='font-light tracking-wider text-lg md:text-3xl'>
-            <div className="flex items-center justify-center mb-4 md:mb-6">
-              <p className="">
-              We kindly request no physical gifts. Your best wishes and presence on our wedding day are the greatest gift for us.
-              </p>
-            </div>
-          
+            <p className="mb-6 md:mb-8">
+              <span className="block line-through opacity-70">
+                Your presence on our wedding day is the greatest gift for us.
+              </span>
+              <span className="block mt-3">
+                Your love, good wishes, and memories from the day still are.
+              </span>
+            </p>
 
             <p className="mb-6 md:mb-8">
-              {"As it's holiday season and Goa could be a bit of a rush, we recommend booking your travel and stay as soon as possible :)"}
-              </p>
+              <span className="block line-through opacity-70">
+                Please book your travel and stay soon.
+              </span>
+              <span className="block mt-3">
+                The planning scramble is over; this page is now our little wedding time capsule.
+              </span>
+            </p>
           </div>
           
           <motion.div

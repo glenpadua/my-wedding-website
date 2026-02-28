@@ -32,16 +32,21 @@ export default function RSVPSection() {
       <div className="text-center">
         <p className="text-lg mb-4">— G&M —</p>
         <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif tracking-widest mb-8">
-          WE HOPE YOU CAN<br />JOIN US
+          <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl line-through opacity-70 mb-4">
+            WE HOPE YOU CAN JOIN US
+          </span>
+          <span className="block">WE&apos;RE HAPPILY</span>
+          <span className="block">MARRIED NOW</span>
         </h2>
         <div className="mb-8 inline-flex justify-center relative">
           <a
             href="https://forms.gle/UyeuVzgReVjMGray6"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-transparent border border-white text-white px-8 py-3 text-lg md:text-2xl font-semibold rounded-full hover:bg-white hover:text-dusty-blue-900 transition-colors duration-300 tracking-widest relative"
+            className="bg-transparent border border-white text-white px-8 py-3 text-sm md:text-xl font-semibold rounded-full hover:bg-white hover:text-dusty-blue-900 transition-colors duration-300 tracking-widest relative flex flex-col items-center leading-tight"
           >
-            RSVP by November 1st
+            <span className="line-through opacity-70 text-xs md:text-base">RSVP by November 1st</span>
+            <span>Guest list closed. Marriage successful.</span>
           </a>
           <motion.div
             variants={buttonFlowerVariants}

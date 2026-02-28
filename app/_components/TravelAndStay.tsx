@@ -116,7 +116,7 @@ export default function TravelAndStay() {
     ],
     info: [
       { title: "Vehicle Rentals", description: "Car and bike rentals for your convenience", link: "https://tinyurl.com/g-m-wedding-rental-options" },
-      { title: "Guest Travel Plans", description: "See how others are coming", link: "https://tinyurl.com/wedding-travel-plans" },
+      { title: "Guest Travel Plans", description: "How everyone planned to make the trip", link: "https://tinyurl.com/wedding-travel-plans" },
       { title: "Wedding Weekend Map", description: "Explore key locations and local recommendations", link: "https://www.google.com/maps/d/u/0/edit?mid=13b2YTiVxGe--xo00ET0z2MnO7Sw6kGk&usp=sharing" },
     ],
   }
@@ -161,7 +161,8 @@ export default function TravelAndStay() {
           TRAVEL AND STAY
         </h1>
         <p className="text-center text-dusty-blue-700 mt-2 mb-8 italic tracking-wider">
-          {"We recommend completing your bookings soon, as it's peak season and availability may be limited :)"}
+          <span className="block line-through opacity-70">We recommend completing your bookings soon.</span>
+          <span className="block mt-2">These were our Goa notes back when this was an actual invite.</span>
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 tracking-wider">
           <InfoColumn 

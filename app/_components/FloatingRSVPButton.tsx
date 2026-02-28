@@ -20,7 +20,7 @@ const FloatingRSVPButton = () => {
           whileTap={{ scale: 0.95 }}
         >
           <HeartHandshake size={18} className="mr-1" />
-          RSVP
+          Married!
         </motion.button>
       </Link>
     </motion.div>

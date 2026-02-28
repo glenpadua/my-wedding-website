@@ -124,8 +124,9 @@ export default function WeddingLocation() {
             </motion.div>
           </span>
         </h2>
-        <p className="text-2xl md:text-3xl italic text-center font-extralight mt-4">
-          Location & how to get there
+        <p className="text-xl md:text-3xl italic text-center font-extralight mt-4">
+          <span className="block line-through opacity-70">Location &amp; how to get there</span>
+          <span className="block mt-2">Where it all happened</span>
         </p>
       </div>
       <div className="w-full md:w-1/2 md:pl-8">

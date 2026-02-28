@@ -3,7 +3,14 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 
-const navItems = ['Home', 'Location', 'Timeline', 'RSVP', 'Travel & Stay', 'Note']
+const navItems = [
+  { label: 'Home', id: 'home' },
+  { label: 'Location', id: 'location' },
+  { label: 'Timeline', id: 'timeline' },
+  { label: 'Married!', id: 'rsvp' },
+  { label: 'Weekend Guide', id: 'travel-stay' },
+  { label: 'Postscript', id: 'note' },
+]
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home')
@@ -56,10 +63,10 @@ export default function Navbar() {
             className="flex space-x-4 sm:space-x-8 overflow-x-auto scrollbar-hide tracking-wider"
           >
             {navItems.map((item) => {
-              const sectionId = item.toLowerCase().replace(' & ', '-').replace(' ', '-')
+              const sectionId = item.id
               return (
                 <Link 
-                  key={item}
+                  key={item.id}
                   href={`#${sectionId}`}
                   onClick={(e) => {
                     e.preventDefault()
@@ -71,7 +78,7 @@ export default function Navbar() {
                       : 'border-transparent text-gray-500 hover:border-dusty-blue-300 hover:text-dusty-blue-700'
                   }`}
                 >
-                  {item}
+                  {item.label}
                 </Link>
               )
             })}

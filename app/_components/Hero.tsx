@@ -132,6 +132,11 @@ export default function Hero() {
             </motion.div>
           </div>
         </div>
+        <p className="mt-6 max-w-xl text-sm md:text-xl tracking-wide text-dusty-blue-700">
+          <span className="line-through opacity-70">Join us</span>
+          <span className="mx-2">/</span>
+          <span>We did it. Happily married as of December 29th, 2024.</span>
+        </p>
       </main>
       
       {/* Bottom indicator */}

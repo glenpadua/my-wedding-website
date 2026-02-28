@@ -17,8 +17,9 @@ export default function WeddingTimeline() {
         <h2 className="text-5xl md:text-9xl text-center font-light tracking-wider">
           THE<br/> TIMELINE
         </h2>
-        <p className="text-2xl md:text-3xl italic text-center font-extralight">
-          Ceremony & Reception
+        <p className="text-xl md:text-3xl italic text-center font-extralight">
+          <span className="block line-through opacity-70">Ceremony &amp; Reception</span>
+          <span className="block mt-2">How the day unfolded</span>
         </p>
       </div>
       <div className="w-full md:w-1/2 md:pl-8">

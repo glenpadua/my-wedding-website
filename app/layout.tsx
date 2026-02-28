@@ -3,8 +3,8 @@ import "./globals.css";
 import FloatingRSVPButton from './_components/FloatingRSVPButton'
 
 export const metadata: Metadata = {
-  title: "Glen & Millusha's Wedding",
-  description: "Join us in celebrating the wedding of Glen and Millusha on December 29th, 2024. Where filter coffee meets feni, and 'I do' meets 'I brew'!",
+  title: "Glen & Millusha's Wedding Archive",
+  description: "Glen and Millusha's wedding website for December 29th, 2024 now lives on as a happily married archive, where filter coffee met feni and the RSVP season is officially over.",
 };
 
 export default function RootLayout({
